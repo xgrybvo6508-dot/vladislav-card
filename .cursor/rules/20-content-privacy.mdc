@@ -1,0 +1,33 @@
+---
+description: Public-fact, tone, and privacy standard for profile content and page metadata
+globs: src/content/**, index.html
+alwaysApply: false
+---
+
+# Content and privacy
+
+## Allowed public facts
+
+- Vladislav is 18, a student in the St. Petersburg area, autistic, has ADHD, and is twice-exceptional (2e).
+- He builds Discrete Tasks (`https://xgrybvo6508-dot.github.io/discrete-tasks/`), a daily-tasks planner, Idea Pulse, and AI learning systems based on mind maps and interleaving.
+- He seeks adult collaborators/cofounders (18–25+) for AI and development projects.
+- He prefers direct, concrete text communication, clear expectations, and async work. Respectful questions about autism are welcome.
+- His only public contact is X `@VladislavSsqwl`.
+
+Describe projects briefly and do not add private links. Every factual content change belongs in `src/content/profile.ts`; `index.html` may contain only matching preview metadata.
+
+## Voice
+
+Use plain, warm, direct, literal English. Keep claims specific and modest. Do not use hype, idioms, inspirational framing, diagnostic speculation, or pity. Frame “autistic / ADHD / 2e” openly and neutrally-positive.
+
+## Never publish
+
+- email addresses or phone numbers
+- exact address or street-level location
+- school or university name
+- finances
+- family information
+- health details beyond “autistic / ADHD / 2e”
+- secrets, API keys, tokens, private endpoints, or private links
+
+When a requested fact is outside the allowed list, omit it and ask Vladislav rather than inferring it. Run the privacy reviewer before any commit.

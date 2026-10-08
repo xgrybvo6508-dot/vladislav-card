@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "hooks": {
+    "beforeShellExecution": [
+      {
+        "command": ".cursor/hooks/guard-shell.sh",
+        "timeout": 5,
+        "failClosed": false
+      }
+    ],
+    "beforeReadFile": [
+      {
+        "command": ".cursor/hooks/guard-read.sh",
+        "timeout": 5,
+        "failClosed": false
+      }
+    ],
+    "afterFileEdit": [
+      {
+        "command": ".cursor/hooks/post-edit.sh",
+        "timeout": 30
+      },
+      {
+        "command": ".cursor/hooks/privacy-scan.sh",
+        "timeout": 10,
+        "failClosed": false
+      }
+    ],
+    "stop": [
+      {
+        "command": ".cursor/hooks/secret-scan.sh",
+        "timeout": 30,
+        "loop_limit": 2
+      }
+    ]
+  }
+}

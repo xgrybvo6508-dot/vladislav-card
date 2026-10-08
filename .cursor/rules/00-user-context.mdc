@@ -1,0 +1,26 @@
+---
+description: Public owner context and communication preferences that guide every product decision
+globs:
+alwaysApply: true
+---
+
+# User context: Vladislav
+
+Vladislav Shamanov is 18 and a student in the St. Petersburg area. He is autistic, has ADHD, and is twice-exceptional (2e). Name this openly, respectfully, and without euphemisms; identity-first “autistic” is welcome.
+
+- He learns through mind maps and interleaving and prefers minimal systems.
+- Use simple, literal English for every UI string. Do not use idioms.
+- Communicate directly and concretely, in text, with explicit expectations. Async communication is fine.
+- It is fine to ask respectful questions about autism.
+- He is seeking adult collaborators/cofounders (18–25+) for AI and development projects through international English-language communities.
+- The only public contact is X: `@VladislavSsqwl` (`https://x.com/VladislavSsqwl`).
+
+# Product
+
+“Vladislav card” is a static, one-page introduction that helps a new person quickly understand who Vladislav is, what he builds, how to work with him, and how to contact him.
+
+Prefer calm, focused, predictable choices. Keep one primary action per screen, short labels, clear hierarchy, and generous spacing.
+
+# Hard privacy boundary
+
+Never include email, phone, exact address, school or university name, finances, family information, secrets/keys, or health details beyond the public labels “autistic / ADHD / 2e”.

@@ -1,0 +1,43 @@
+---
+description: Calm dark green/purple visual system with mobile-first and accessible interaction rules
+globs: src/ui/**, src/**/*.css, index.html
+alwaysApply: false
+---
+
+# Design system
+
+Define these tokens once in `src/ui/tokens.css`; do not hard-code their values elsewhere:
+
+```css
+:root {
+  color-scheme: dark;
+  --bg: #0e0f13; --surface: #161820; --surface-2: #1d2029;
+  --border: #2a2e3a; --text: #e7e9ee; --muted: #9aa0ad;
+  --green: #3ddc97; --green-soft: rgb(61 220 151 / 0.12);
+  --purple: #a78bfa; --purple-soft: rgb(167 139 250 / 0.12);
+  --warn: #f5b971; --on-accent: #0e0f13;
+  --radius: 12px; --radius-lg: 16px;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+```
+
+- Green means primary action and success. Purple means AI/agent content. Never swap or mix those meanings.
+- Use at most one filled accent button per screen; secondary actions are quiet outline or text controls.
+- Use one centered column, `max-width: 720px`, with generous mobile-first spacing and text lines no wider than `68ch`.
+- Use system fonts only. Base text is 17px with 1.6 line height; use weights 400 and 600.
+- Keep sections easy to scan and disclose detail progressively. The optional chat must not compete with the card.
+
+# Motion and accessibility
+
+- Only short opacity/transform transitions (150–200ms). No flashing, looping, shaking, parallax, or confetti.
+- Disable animations and transitions under `prefers-reduced-motion: reduce`.
+- Meet WCAG AA contrast. Use semantic HTML, labelled controls, and polite live regions.
+- Every interactive element must work by keyboard, have a visible 2px focus ring, and provide a touch target of at least 44×44px.
+- Inputs use at least 16px text. Dialog focus is trapped, starts predictably, closes with Escape, and returns to its trigger.
+
+# Responsive and assets
+
+Design mobile-first; verify at 375px, 768px, 1024px, and 1440px. Respect safe-area insets. Keep all fonts and assets local: no third-party fonts, CDNs, trackers, or analytics.

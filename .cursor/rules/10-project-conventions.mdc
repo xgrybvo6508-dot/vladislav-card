@@ -1,0 +1,31 @@
+---
+description: Stack, folder layout, strict TypeScript, testing, deployment, and base-path conventions
+globs:
+alwaysApply: true
+---
+
+# Project conventions
+
+- Use Vite and vanilla strict TypeScript. Do not add a UI framework.
+- Keep the site static and mobile-first. Deploy it to GitHub Pages at `https://xgrybvo6508-dot.github.io/vladislav-card/`.
+- Set Vite `base` to `/vladislav-card/`. Build asset URLs from `import.meta.env.BASE_URL`; do not assume the domain root.
+- Put all editable public profile copy and structured facts in exactly one file: `src/content/profile.ts`. UI and chat code consume that data; do not duplicate profile facts elsewhere.
+- Use `vitest`, ESLint, and Prettier. Keep these npm scripts: `dev`, `build`, `test`, `lint`, and `typecheck`.
+
+# Layout
+
+```text
+src/
+  main.ts       # bootstrap only
+  content/      # profile.ts: single content source of truth
+  ui/           # semantic views, dialogs, and CSS
+  chat/         # settings, grounded prompt, OpenAI-compatible client
+  lib/          # small pure helpers and boundary validation
+public/         # local static assets, including the generated OG PNG
+```
+
+- Colocate tests as `*.test.ts`.
+- Use ES modules and named exports. Avoid `any`; validate `unknown` at API and localStorage boundaries.
+- Keep pure logic DOM-free and inject fetch/storage where useful for testing.
+- Do not use third-party fonts, CDNs, trackers, analytics, or runtime dependencies that send data unexpectedly.
+- Before calling work complete, run `npm run typecheck`, `npm run lint`, `npm test`, and `npm run build`.
