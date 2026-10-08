@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Site icon</title>
+  <rect width="64" height="64" rx="16" fill="#161820" />
+  <path d="M16 18h10l6 20 6-20h10L37 48H27L16 18Z" fill="#3ddc97" />
+  <circle cx="48" cy="16" r="7" fill="#a78bfa" />
+</svg>

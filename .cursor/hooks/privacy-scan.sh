@@ -36,7 +36,19 @@ fi
 hits=""
 add_hit() {
   local rel=$1 category=$2 pattern=$3 lines
-  lines=$(grep -nEI -- "$pattern" "$root/$rel" 2>/dev/null | cut -d: -f1 | sort -nu | paste -sd, -)
+  if [ "$category" = "phone-like number" ]; then
+    # Ignore mandated local-development hosts and CSS rgb() tuples while
+    # retaining the broad phone check for public prose.
+    lines=$(
+      grep -nEI -- "$pattern" "$root/$rel" 2>/dev/null |
+        grep -vE '127\.0\.0\.1|rgb\(' |
+        cut -d: -f1 |
+        sort -nu |
+        paste -sd, -
+    )
+  else
+    lines=$(grep -nEI -- "$pattern" "$root/$rel" 2>/dev/null | cut -d: -f1 | sort -nu | paste -sd, -)
+  fi
   [ -n "$lines" ] || return 0
   hits="${hits:+$hits; }$rel: $category (line $lines)"
 }
